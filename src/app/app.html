@@ -6,4 +6,12 @@
      <li class="list-group-item">{{ elemento }}</li>
     }
   </ul>  
+  <hr>
+  <ul class="list-group">
+    @for(item of listaItems;track $index;let count=$count,first=$first,last=$last,even=$even,odd=$odd){
+    <li class="list-group-item">
+      {{$index}}: {{item}} - Total: {{count}} - First: {{first}} - Last: {{last}} - Even: {{even}} - Odd: {{odd}}
+    </li>
+  }
+  </ul>
 </main>
