@@ -14,4 +14,25 @@
     </li>
   }
   </ul>
+  <hr>
+  <h2>Flujo de control &#64;if</h2>
+  <button class="btn btn-primary" (click)="toggleMostrar()">
+    Toggle Mostrar 
+  </button>
+  <br><br>
+  <p class="alert alert-success">
+    {{ mostrar }}
+  </p>
+  @if(mostrar){
+    <div class="alert alert-info">
+      El contenido se está mostrando.
+    </div>
+  }
+  @else{
+    <div class="alert alert-warning">
+      El contenido está oculto.
+    </div>
+  }
+  
+
 </main>
