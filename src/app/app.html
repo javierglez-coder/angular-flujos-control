@@ -1,20 +1,5 @@
 <main class="container">
-  <h1>Flujos de control</h1>
-  <p>Esta aplicación demuestra diferentes flujos de control en Angular.</p>
-  <ul class="list-group">
-    @for(elemento of listaElementos; track elemento){
-     <li class="list-group-item">{{ elemento }}</li>
-    }
-  </ul>  
-  <hr>
-  <ul class="list-group">
-    @for(item of listaItems;track $index;let count=$count,first=$first,last=$last,even=$even,odd=$odd){
-    <li class="list-group-item">
-      {{$index}}: {{item}} - Total: {{count}} - First: {{first}} - Last: {{last}} - Even: {{even}} - Odd: {{odd}}
-    </li>
-  }
-  </ul>
-  <hr>
+  <h1>Flujos de control</h1>  
   <h2>Flujo de control &#64;if</h2>
   <button class="btn btn-primary" (click)="toggleMostrar()">
     Toggle Mostrar 
@@ -33,6 +18,35 @@
       El contenido está oculto.
     </div>
   }
-  
+
+  <hr>
+  <select id="" class="form-select" (change)="cambiarNivelUsuario($event)">
+    @for(nivel of listaNivelesUsuario;track $index){
+      <option [value]="nivel" [selected]="nivel===nivelUsuario">
+        {{ nivel }}
+      </option>
+    }
+  </select>
+
+  <hr>
+  @if(nivelUsuario==='admin'){
+    <div class="alert alert-danger">
+      Bienvenido, administrador. Tienes acceso completo al sistema.
+    </div>
+  }
+  @else if(nivelUsuario==='editor'){
+    <div class="alert alert-warning">
+      Bienvenido, editor. Puedes modificar contenido.
+    </div>
+  }@else if(nivelUsuario==='moderador'){
+    <div class="alert alert-info">
+      Bienvenido, moderador. Puedes revisar contenido.
+    </div>
+  }
+  @else{
+    <div class="alert alert-secondary">
+      Bienvenido, invitado. Tienes acceso limitado.
+    </div>
+  }
 
 </main>
