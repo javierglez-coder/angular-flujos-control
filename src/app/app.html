@@ -1,4 +1,12 @@
 <main class="container">
   <h1>Flujos de control (&#64;empty)</h1>
-  
+  <ul class="list-group">
+    @for(item of listaItems; track $index){
+    <li class="list-group-item">{{ item }}</li>
+    }
+    @empty {
+      <span class="alert alert-warning">No existen elementos</span>
+    }
+
+  </ul>
 </main>

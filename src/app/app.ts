@@ -8,7 +8,9 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('angular-flujos-control');   
-  listaItems=['Item A', 'Item B', 'Item C', 'Item D', 'Item E', 'Item F', 'Item G', 'Item H', 'Item I', 'Item J'];
+  //listaItems=['Item A', 'Item B', 'Item C', 'Item D', 'Item E', 'Item F', 'Item G', 'Item H', 'Item I', 'Item J'];
+  listaItems = [];
+  
   
 
 
