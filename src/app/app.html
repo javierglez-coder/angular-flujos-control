@@ -1,38 +1,4 @@
 <main class="container">
-  <h1>Flujos de control</h1>
-  <h2>Flujo de control &#64;if</h2>
-  <button class="btn btn-primary" (click)="toggleMostrar()">Toggle Mostrar</button>
-  <br /><br />
-  <p class="alert alert-success">
-    {{ mostrar }}
-  </p>
-  @if(mostrar){
-  <div class="alert alert-info">El contenido se está mostrando.</div>
-  } @else{
-  <div class="alert alert-warning">El contenido está oculto.</div>
-  }
-
-  <hr />
-  <select id="" class="form-select" (change)="cambiarNivelUsuario($event)">
-    @for(nivel of listaNivelesUsuario;track $index){
-    <option [value]="nivel" [selected]="nivel === nivelUsuario">
-      {{ nivel }}
-    </option>
-    }
-  </select>
-
-  <hr />
-  @switch (nivelUsuario) { @case('admin'){
-  <div class="alert alert-danger">
-    Bienvenido, administrador. Tienes acceso completo al sistema.
-  </div>
-  } @case('editor'){
-  <div class="alert alert-warning">Bienvenido, editor. Puedes modificar contenido.</div>
-  }@case('moderador'){
-  <div class="alert alert-info">Bienvenido, moderador. Puedes revisar contenido.</div>
-  } @case('invitado'){
-  <div class="alert alert-secondary">Bienvenido, invitado. Tienes acceso limitado.</div>
-  } @default {
-  <div class="alert alert-secondary">Bienvenido, no se reconoce tu nivel de usuario.</div>
-  } }
+  <h1>Flujos de control (&#64;empty)</h1>
+  
 </main>
