@@ -1,4 +1,21 @@
 <main class="container">
   <h1>Pipes</h1>
-  
+  <p>
+    Hola, {{ nombre() }}!
+  </p>
+  <p>
+    Hola, {{ nombre() | uppercase }}!
+  </p>  
+  <p>
+    Hola, {{ nombre() | lowercase }}!
+  </p>  
+  <p>
+    Fecha actual: {{ fechaActual() | date:'fullDate' }}
+  </p>
+  <p>
+    Fecha actual: {{ fechaActual() | date:'dd/MM/yyyy' }}
+  </p>
+  <p>
+    Precio: {{ precio() | currency:'USD':'symbol':'1.2-2' }}
+    </p>
 </main>
