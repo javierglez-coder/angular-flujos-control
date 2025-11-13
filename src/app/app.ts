@@ -8,4 +8,18 @@ import { Component, effect, signal } from '@angular/core';
 })
 export class App {
 
+  textoBuscado='';
+
+  buscar(texto:string){
+    this.textoBuscado=texto;
+    console.log('Buscando: ', this.textoBuscado);
+  }
+
+  limpiar(input: HTMLInputElement){
+    this.textoBuscado='';
+    input.value='';
+    input.focus();
+  }
+
+
 }

@@ -1,4 +1,27 @@
-<main class="container">
-
+<main class="container my-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3>Buscador simple</h3>
+    </div>
+    <div class="card-body">
+      <!-- #busqueda es la variable de referencia-->
+       <input type="text" #busqueda class="form-control mb-3" 
+       placeholder="Ingrese término de búsqueda">
+       <div class="d-grip gap-2">
+          <button class="btn btn-primary"
+          (click)="buscar(busqueda.value)">
+            Buscar
+          </button>
+          <button class="btn btn-secondary" (click)="limpiar(busqueda)">
+            Limpiar
+          </button>
+       </div>
+       @if(textoBuscado){
+        <div class="alert alert-success mt-3">
+          Resultado de la búsqueda: {{textoBuscado}}
+        </div>
+       }
+    </div>
+  </div>
   
 </main>
