@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { UserProfile } from './shared/components/user-profile/user-profile';
 import { Header } from './shared/components/header/header';
 import { Footer } from './shared/components/footer/footer';
@@ -10,8 +10,6 @@ import { Footer } from './shared/components/footer/footer';
   styleUrls: ['./app.scss'],  
 })
 export class App {
-
-
-
-
+usuario = signal('Jimmy Javier');
+usuario2 = signal('Javier');
 }
