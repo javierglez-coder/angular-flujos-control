@@ -1,32 +1,26 @@
 import { Component, signal } from '@angular/core';
-import { UserProfile } from './shared/components/user-profile/user-profile';
 import { Header } from './shared/components/header/header';
 import { Footer } from './shared/components/footer/footer';
-import { Usuario } from './models/usuario';
+import { ProductoCard } from './shared/components/producto-card/producto-card';
+import { Producto } from './models/producto';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  imports: [UserProfile, Header, Footer],
+  imports: [ Header, Footer,ProductoCard],
   styleUrls: ['./app.scss'],
 })
 export class App {
-  usuario = signal<Usuario>({
-    id: 1,
-    nombre: 'Jimmy Javier',
-    email: 'jimmy@example.com',
-    edad: 30,
-  });
-  usuario2 = signal<Usuario>({
-    id: 2,
-    nombre: 'Javier',
-    email: 'javier@example.com',
-    edad: undefined,
-  });
 
+  productos = signal<Producto[]>([
+    {id: 1, nombre: 'Laptop', precio: 1500, estaInventario: true},
+    {id: 2, nombre: 'Mouse', precio: 25, estaInventario: true},
+    {id: 3, nombre: 'Teclado', precio: 45, estaInventario: false},
+    {id: 4, nombre: 'Monitor', precio: 300, estaInventario: true},
+    {id: 5, nombre: 'Impresora', precio: 200, estaInventario: false},
+  ]);
+  
   constructor() {
-    setTimeout(() => {
-      this.usuario.set({ id: 1, nombre: 'Jimmy J.', email: 'jimmyj@example.com', edad: 31 });
-    }, 3000);
+  
   }
 }

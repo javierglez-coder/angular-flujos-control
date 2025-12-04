@@ -1,0 +1,12 @@
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ producto()?.nombre }}</h5>
+            <p class="card-text">Precio: {{ producto()?.precio  }}</p>
+            @if(producto()?.estaInventario) {
+                <span class="badge bg-success">En Inventario</span>
+            } @else {
+                <span class="badge bg-danger">Agotado</span>
+            }
+    </div>
+</div>

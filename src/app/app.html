@@ -1,4 +1,7 @@
 <app-header></app-header>
-<app-user-profile [usuario]="usuario()"></app-user-profile>
-<app-user-profile [usuario]="usuario2()"></app-user-profile>
-<app-footer></app-footer>
+<div class="row row-cols-1 row-cols-md-3 g-4 p-4">
+  @for (producto of productos(); track producto.id) {    
+      <app-producto-card [producto]="producto"></app-producto-card>    
+  }
+</div>
+<!-- <app-footer></app-footer> -->
