@@ -1,7 +1,10 @@
 <app-header></app-header>
 <div class="row row-cols-1 row-cols-md-3 g-4 p-4">
-  @for (producto of productos(); track producto.id) {    
-      <app-producto-card [producto]="producto"></app-producto-card>    
+  @for (producto of productos(); track producto.id) {
+  <app-producto-card [producto]="producto" (onEliminar)="eliminar($event)"></app-producto-card>
+  }
+  @empty {
+  <p class="alert alert-info">No hay productos</p>
   }
 </div>
 <!-- <app-footer></app-footer> -->

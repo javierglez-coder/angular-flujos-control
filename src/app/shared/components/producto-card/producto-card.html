@@ -2,11 +2,15 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">{{ producto()?.nombre }}</h5>
-            <p class="card-text">Precio: {{ producto()?.precio  }}</p>
+            <p class="card-text">Precio: {{ producto()?.precio }}</p>
             @if(producto()?.estaInventario) {
-                <span class="badge bg-success">En Inventario</span>
+            <span class="badge bg-success">En Inventario</span>
             } @else {
-                <span class="badge bg-danger">Agotado</span>
+            <span class="badge bg-danger">Agotado</span>
             }
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-danger" (click)="eliminar(producto()?.id)">Eliminar</button>
+        </div>
     </div>
 </div>

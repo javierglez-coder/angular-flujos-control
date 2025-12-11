@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Producto } from '../../../models/producto';
 
 @Component({
@@ -8,5 +8,10 @@ import { Producto } from '../../../models/producto';
   styleUrl: './producto-card.scss'
 })
 export class ProductoCard {
-producto = input<Producto>();
+  producto = input<Producto>();
+  onEliminar = output<number>();
+
+  eliminar(id: number) {
+    this.onEliminar.emit(id);
+  }
 }
