@@ -11,7 +11,8 @@ export class ProductoCard {
   producto = input<Producto>();
   onEliminar = output<number>();
 
-  eliminar(id: number) {
-    this.onEliminar.emit(id);
+  eliminar(id: number|undefined) {
+    if (id)
+      this.onEliminar.emit(id);
   }
 }
